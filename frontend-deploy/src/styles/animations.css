@@ -1,0 +1,47 @@
+@keyframes pulse {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.role-details-panel {
+  animation: slideIn 0.2s ease-out;
+}
+
+.role-badge {
+  animation: fadeIn 0.3s ease-out;
+}
+
+.role-details-button:hover {
+  transition: all 0.2s ease;
+}
+
+.role-details-button:hover .role-badge {
+  transform: scale(1.05);
+}

@@ -1,0 +1,57 @@
+# CosyPOS Project Commands
+
+kill node = taskkill /F /IM node.exe
+npx kill-port 4000
+
+# Terminal 1 - Backend
+cd "C:\Users\eesaa\OneDrive\CosyposOrg\cosypos-clean\backend-deploy"
+npm run dev
+
+# Terminal 2 - Frontend
+cd "C:\Users\eesaa\OneDrive\CosyposOrg\cosypos-clean\frontend-deploy"
+npm run dev
+
+
+
+
+==================================================
+The issue is that the frontend is still using cached data from the old SQLite database. Let me implement a complete database connection reset and force fresh data from PostgreSQL:
+
+================================================
+frontned env
+
+VITE_API_URL=http://localhost:4000
+==================================
+backend env
+
+# Database Configuration
+
+DATABASE_URL="postgresql://cosypos_user:L52zVvYmL1oQpx68siEMr5z3N9KA9bLk@dpg-d3qkenmmcj7s73bq3570-a.singapore-postgres.render.com/cosypos"
+
+# JWT Configuration
+JWT_SECRET="cosypos-super-secret-jwt-key-2024"
+
+# Server Configuration
+NODE_ENV="development"
+PORT=4000
+
+# File Upload Configuration
+MAX_FILE_SIZE=10485760
+UPLOAD_PATH=./uploads
+
+# CORS Configuration
+
+================================================================
+ADMIN button → admin@cosypos.app / admin123
+STAFF button → staff@cosypos.app / staff123
+USER button → user@cosypos.app / user123
+
+==============================================================
+
+Prisma Studio=
+
+cd "C:\Users\eesaa\OneDrive\CosyposOrg\cosypos-clean\backend-deploy"
+npx prisma studio
+
+==================================================
+Base64-encoded images included - making response huge

@@ -1,0 +1,24 @@
+# Render.com Backend Service Configuration
+# Copy these settings to your Render backend service
+
+# Service Settings:
+# - Service Type: Web Service
+# - Environment: Node.js
+# - Node Version: 22.16.0
+
+# Build Settings:
+# - Root Directory: backend-deploy
+# - Build Command: npm install && npx prisma generate && npx prisma db push --accept-data-loss && node src/seed.js
+# - Start Command: npm run dev
+
+# Environment Variables:
+DATABASE_URL=postgresql://cosypos_user:cosypos_password@dpg-d3qkenmmcj7s73bq3570-a:5432/cosypos
+JWT_SECRET=cosypos-super-secret-jwt-key-2024
+NODE_ENV=production
+PORT=4000
+MAX_FILE_SIZE=10485760
+UPLOAD_PATH=./uploads
+
+# Auto-Deploy Settings:
+# - Auto-Deploy: Yes
+# - Branch: main

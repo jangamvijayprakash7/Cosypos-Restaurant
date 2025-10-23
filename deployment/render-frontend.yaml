@@ -1,0 +1,19 @@
+# Render.com Frontend Service Configuration
+# Copy these settings to your Render frontend service
+
+# Service Settings:
+# - Service Type: Static Site
+# - Environment: Node.js
+# - Node Version: 22.16.0
+
+# Build Settings:
+# - Root Directory: frontend-deploy
+# - Build Command: npm install && npm run build
+# - Publish Directory: dist
+
+# Environment Variables:
+VITE_API_URL=https://cosyposy-duplicate.onrender.com
+
+# Auto-Deploy Settings:
+# - Auto-Deploy: Yes
+# - Branch: main

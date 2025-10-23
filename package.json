@@ -1,0 +1,56 @@
+{
+  "name": "cosypos",
+  "version": "1.0.0",
+  "description": "Modern restaurant management system with React frontend and Node.js backend",
+  "main": "index.js",
+  "scripts": {
+    "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\"",
+    "dev:backend": "cd backend-deploy && npm run dev",
+    "dev:frontend": "cd frontend-deploy && npm run dev",
+    "build": "npm run build:backend && npm run build:frontend",
+    "build:backend": "cd backend-deploy && npm install && npx prisma generate",
+    "build:frontend": "cd frontend-deploy && npm install && npm run build",
+    "install:all": "npm run install:backend && npm run install:frontend",
+    "install:backend": "cd backend-deploy && npm install",
+    "install:frontend": "cd frontend-deploy && npm install",
+    "db:generate": "cd backend-deploy && npx prisma generate",
+    "db:push": "cd backend-deploy && npx prisma db push",
+    "db:seed": "cd backend-deploy && node src/seed.js",
+    "db:setup": "npm run db:generate && npm run db:push && npm run db:seed",
+    "clean": "npm run clean:backend && npm run clean:frontend",
+    "clean:backend": "cd backend-deploy && rm -rf node_modules",
+    "clean:frontend": "cd frontend-deploy && rm -rf node_modules",
+    "lint": "npm run lint:backend && npm run lint:frontend",
+    "lint:backend": "cd backend-deploy && npm run lint",
+    "lint:frontend": "cd frontend-deploy && npm run lint"
+  },
+  "keywords": [
+    "restaurant",
+    "management",
+    "pos",
+    "react",
+    "nodejs",
+    "postgresql",
+    "prisma"
+  ],
+  "author": "Brainstorm Collaboration",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  },
+  "engines": {
+    "node": ">=22.16.0",
+    "npm": ">=10.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Brainstorm-collab/cosyposy-duplicate.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Brainstorm-collab/cosyposy-duplicate/issues"
+  },
+  "homepage": "https://github.com/Brainstorm-collab/cosyposy-duplicate#readme",
+  "dependencies": {
+    "node": "^22.21.0"
+  }
+}
